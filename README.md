@@ -7,11 +7,11 @@ Developed by Kiran Busch 2023
 
 ## Examples of How To Use (Buggy Alpha Version)
 
-Creating A Server
+Creating a Server and calling chat2dataframe function
 
 ```python
-bla
+from whatsappchat2dataframe import Converter
 
-# Other Code
-
+conv = Converter()
+df = conv.chat2dataframe('<path_to_file>')
 ```
