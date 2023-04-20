@@ -1,7 +1,7 @@
 # whatsappChat2dataFrame
 
 
-Under construction! Not ready for use yet! Currently experimenting and planning!
+Currently experimenting and planning!
 
 Developed by Kiran Busch 2023
 
