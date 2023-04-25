@@ -5,6 +5,12 @@ Currently experimenting and planning!
 
 Developed by Kiran Busch 2023
 
+## Try it out - install package
+
+```python
+!pip install whatsappchat2dataframe==0.0.4
+```
+
 ## Examples of How To Use (Buggy Alpha Version)
 
 Creating a Converter and calling chat2dataframe function
