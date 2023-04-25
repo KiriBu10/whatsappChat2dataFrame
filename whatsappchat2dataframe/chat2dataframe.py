@@ -49,10 +49,11 @@ class Converter:
         start_positions_date = [m.start() for m in re.finditer(self.DATE_TIME, data)]
         for start,end in tqdm(list(zip(start_positions_date[:-1],start_positions_date[1:])), desc='Read messages'):
             subdata = data[start:end]
-            yield self.__to_pd_row(subdata.replace(self.LTR, ""))
+            if len(self.AUTHOR.findall(subdata))>0:
+                yield self.__to_pd_row(subdata.replace(self.LTR, ""))
     
     def __try_parsing_date(self,date_time):
-        for fmt in ("%d.%m.%y-%H:%M:%S", "%Y/%m/%d-%H:%M:%S", "%d/%m/%y-%H:%M"):
+        for fmt in ("%d.%m.%y-%H:%M:%S", "%Y/%m/%d-%H:%M:%S", "%d/%m/%y-%H:%M", "%d.%m.%y-%H:%M"):
             try:
                 return pd.to_datetime(f'{date_time[0]}-{date_time[1]}', format=fmt)
             except ValueError:
